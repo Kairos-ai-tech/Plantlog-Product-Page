@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PlantLog — 一本還在生長的植物日誌</title>
+<meta name="description" content="把偶爾養植物的你，變成穩定的照顧者。拍一張照，自動辨識、記錄澆水與成長、即時推播提醒。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/home.css" />
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="container masthead-row">
+    <div class="masthead-mark">
+      <img src="/assets/app-icon.png" alt="PlantLog app icon" class="icon" />
+      PlantLog
+    </div>
+    <select class="lang-switch" aria-label="語言" onchange="if(this.value){window.location.href=this.value;}">
+      <option value="/" selected>中文 · ZH</option>
+      <option value="/en/">English · EN</option>
+      <option value="/fr/">Français · FR</option>
+      <option value="/es/">Español · ES</option>
+      <option value="/ja/">日本語 · JA</option>
+      <option value="/it/">Italiano · IT</option>
+      <option value="/de/">Deutsch · DE</option>
+    </select>
+    <a href="#get" class="masthead-cta">下載 ↗</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-issue reveal">
+      <span>№ 001 &nbsp;·&nbsp; A companion for the sporadic gardener</span>
+      <span class="divider"></span>
+    </div>
+
+    <div class="hero-grid">
+      <h1 class="hero-title reveal">
+        Grow
+        <span class="italic">steadier</span>,
+        <br />not
+        <span class="italic">harder</span><span class="amp">.</span>
+        <span class="han">把偶爾養植物的你，變成一位穩定的照顧者</span>
+      </h1>
+
+      <aside class="hero-side reveal reveal-d2">
+        <div class="icon-pedestal">
+          <img src="/assets/app-icon.png" alt="PlantLog" class="icon-big" />
+          <div class="caption">
+            <span>PlantLog · iOS</span>
+            <span class="star">✦</span>
+            <span>App Store</span>
+          </div>
+        </div>
+        <p class="hero-kicker">
+          市面上的植物 App 不是一本死掉的百科，就是模仿電子雞的玩物。
+          <em>PlantLog</em> 走中間那條路：把每一棵植物當成一本還在生長的日誌——
+          澆水節律、土壤含水、健康分數——加上一層讓第一張照片就能做實事的 AI，
+          所以沒人會因為「新手畫面什麼都沒有」而流失。
+        </p>
+        <div class="hero-actions">
+          <a href="#get" class="btn btn-primary">
+            App Store 下載
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 11 L11 3 M11 3 H5 M11 3 V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#loop" class="btn btn-ghost">閱讀內頁</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-strip">
+      <div class="strip-item reveal">
+        <span class="label">Species</span>
+        <span class="value">10,000<span class="han">種</span></span>
+      </div>
+      <div class="strip-item reveal reveal-d2">
+        <span class="label">Latency</span>
+        <span class="value"><em style="font-style:italic;">~</em>2.1<span class="han">秒辨識</span></span>
+      </div>
+      <div class="strip-item reveal reveal-d3">
+        <span class="label">Reminders</span>
+        <span class="value">FCM<span class="han">推播排程</span></span>
+      </div>
+      <div class="strip-item reveal reveal-d4">
+        <span class="label">Offline</span>
+        <span class="value">SwiftData<span class="han">先本地</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Loop -->
+<section class="section" id="loop">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>01</span>
+      <span class="chapter">Ritual</span>
+      <span>The core loop</span>
+      <span class="line"></span>
+      <span>Four moves, forever</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      A loop that <span class="italic">rhymes</span>,<br />
+      not a task list that <span class="italic">nags</span>.
+      <span class="han">不是提醒事項，而是一段會回頭的節奏</span>
+    </h2>
+
+    <p class="section-lede reveal reveal-d3">
+      你只要重複四個動作。<em>拍一張、記一筆、收到提醒、檢查今日。</em>
+      每一個動作都被打磨到夠短——所以它會留在你的日常裡，
+      而不是被推進「等等再說」的資料夾。
+    </p>
+
+    <div class="loop-grid">
+      <article class="loop-step reveal">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <rect x="3" y="6" width="18" height="14" rx="2"/>
+          <circle cx="12" cy="13" r="4"/>
+          <path d="M8 6 L10 3 H14 L16 6"/>
+        </svg>
+        <div class="step-num">I<sup>01</sup></div>
+        <h3>新增一棵植物<em>Snap & identify</em></h3>
+        <p>拍一張照，AI 從 Plant.id 回傳候選物種與照護難度、光照、澆水偏好。預覽立刻出現在加入表單上，上傳失敗也會明確告訴你。</p>
+      </article>
+
+      <article class="loop-step reveal reveal-d2">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M5 21 L5 7 Q5 5 7 5 L17 5 Q19 5 19 7 L19 21 Z"/>
+          <path d="M8 10 H16 M8 14 H16 M8 18 H13"/>
+        </svg>
+        <div class="step-num">II<sup>02</sup></div>
+        <h3>記下觀察<em>Structured journalling</em></h3>
+        <p>澆水、施肥、換盆、修剪、問題、里程碑——七種結構化事件。量葉片、記土壤含水、打 1-5 分健康分數，一次最多附 4 張照片。</p>
+      </article>
+
+      <article class="loop-step reveal reveal-d3">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M6 9 Q6 4 12 4 Q18 4 18 9 V14 L20 17 H4 L6 14 Z"/>
+          <path d="M10 20 Q12 22 14 20"/>
+        </svg>
+        <div class="step-num">III<sup>03</sup></div>
+        <h3>收到提醒<em>Scheduled push</em></h3>
+        <p>伺服器每日排程推播，穩定送達。點擊通知直接開啟該植物，通知欄上的「完成」按鈕——不必開 App。</p>
+      </article>
+
+      <article class="loop-step reveal reveal-d4">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <rect x="4" y="5" width="16" height="16" rx="2"/>
+          <path d="M4 9 H20 M8 3 V7 M16 3 V7"/>
+          <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+        </svg>
+        <div class="step-num">IV<sup>04</sup></div>
+        <h3>今日畫面<em>Today screen</em></h3>
+        <p>所有植物的逾期、今日、即將——三組跨植物的聚合清單。首頁的今日提醒卡片只在真的有事要做時才出現。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Phone Showcase -->
+<section class="showcase">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>02</span>
+      <span class="chapter">Interface</span>
+      <span>Built for a glance</span>
+      <span class="line"></span>
+      <span>zh-Hant, throughout</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Three screens,<br />
+      <span class="italic">one rhythm</span>.
+      <span class="han">一眼就懂的三個畫面，組合成一整個節奏</span>
+    </h2>
+
+    <p class="section-lede reveal reveal-d3">
+      每一個畫面都設計成「瞥一眼就能離開」。<em>你不會在 App 裡停留——你在人生裡澆水，App 只是記得。</em>
+    </p>
+
+    <div class="phone-stage">
+      <div class="phone-col reveal">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>9:41</span>
+              <span>●●● ▲ ▤</span>
+            </div>
+            <div class="screen-today">
+              <div class="date">Tuesday · 04 / 20</div>
+              <div class="heading">今日照顧<em>Today</em></div>
+
+              <div class="today-group">
+                <div class="today-group-label overdue">
+                  <span>Overdue</span>
+                  <span class="han">逾期 · 2</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot overdue"></span>
+                  <span class="name">琴葉榕 Felix<small>澆水 · 3 天前</small></span>
+                  <span class="check">○</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot overdue"></span>
+                  <span class="name">龜背芋<small>施肥 · 1 天前</small></span>
+                  <span class="check">○</span>
+                </div>
+              </div>
+
+              <div class="today-group">
+                <div class="today-group-label">
+                  <span>Today</span>
+                  <span class="han">今日 · 3</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot"></span>
+                  <span class="name">虎尾蘭<small>澆水</small></span>
+                  <span class="check">○</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot"></span>
+                  <span class="name">多肉 · Echeveria<small>健康檢查</small></span>
+                  <span class="check">○</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot"></span>
+                  <span class="name">蔓綠絨<small>轉面</small></span>
+                  <span class="check">○</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <span class="num">i.</span>
+          <span class="txt">今日畫面：逾期、今日、即將——跨植物聚合。</span>
+        </div>
+      </div>
+
+      <div class="phone-col reveal reveal-d2">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>9:41</span>
+              <span>●●● ▲ ▤</span>
+            </div>
+            <div class="screen-plant">
+              <div class="plant-hero">
+                <span class="tag">Species · identified</span>
+                <span class="scientific">Ficus lyrata</span>
+              </div>
+              <div class="plant-meta">
+                <div class="name">琴葉榕 · Felix</div>
+                <div class="loc">Living room · Window-east</div>
+
+                <div class="plant-stats">
+                  <div class="plant-stat"><div class="n">47</div><div class="l">天連續</div></div>
+                  <div class="plant-stat"><div class="n">4.8</div><div class="l">健康分數</div></div>
+                  <div class="plant-stat"><div class="n">126<span style="font-size:12px">cm</span></div><div class="l">身高</div></div>
+                </div>
+
+                <div class="plant-timeline">
+                  <div class="timeline-entry">
+                    <span class="date">04/18</span>
+                    <span class="evt">澆水 320ml<em>Watering</em></span>
+                  </div>
+                  <div class="timeline-entry">
+                    <span class="date">04/12</span>
+                    <span class="evt">換盆 → 8" 陶盆<em>Repot</em></span>
+                  </div>
+                  <div class="timeline-entry">
+                    <span class="date">04/05</span>
+                    <span class="evt">新葉 × 2<em>Milestone</em></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <span class="num">ii.</span>
+          <span class="txt">植物詳情：一本結構化的長期日誌。</span>
+        </div>
+      </div>
+
+      <div class="phone-col reveal reveal-d3">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status" style="color: rgba(245,239,224,0.9);">
+              <span>9:41</span>
+              <span>●●● ▲ ▤</span>
+            </div>
+            <div class="screen-notif">
+              <div class="lockscreen-time">9:41</div>
+              <div class="lockscreen-date">星期二 · 4 月 20 日</div>
+
+              <div class="notif-card">
+                <div class="notif-head">
+                  <div class="notif-app">
+                    <div class="notif-icon">P</div>
+                    <span>PlantLog</span>
+                  </div>
+                  <span class="notif-time">現在</span>
+                </div>
+                <div class="notif-title">琴葉榕 Felix 該澆水了</div>
+                <div class="notif-body">距離上次澆水已經 6 天。土壤應已乾透——建議給 300ml 左右。</div>
+                <div class="notif-actions">
+                  <div class="notif-action">延後一天</div>
+                  <div class="notif-action primary">完成 ✓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <span class="num">iii.</span>
+          <span class="txt">推播內含「完成」——不必開 App。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Index -->
+<section class="section features">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>03</span>
+      <span class="chapter">Index</span>
+      <span>Inside the app</span>
+      <span class="line"></span>
+      <span>An annotated table of contents</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Every feature,<br />
+      <span class="italic">catalogued</span>.
+      <span class="han">像一本田野圖鑑的目錄</span>
+    </h2>
+
+    <p class="section-lede reveal reveal-d3">
+      如果你喜歡看規格——這裡是完整的功能目錄。
+      按編號讀，或直接跳到你最在意的那一頁。
+    </p>
+
+    <table class="features-table">
+      <tbody>
+        <tr class="reveal">
+          <td class="feat-num">01</td>
+          <td class="feat-title">植物管理<em>Plant management</em></td>
+          <td class="feat-desc">新增、編輯、封存——含物種、地點標籤、獲得日期、備註。Grid 與時間線兩種檢視；照片上傳失敗會明確提示（不再靜默失敗）。</td>
+          <td class="feat-tags"><span>CRUD</span><span>Surfaced errors</span></td>
+        </tr>
+        <tr class="reveal">
+          <td class="feat-num">02</td>
+          <td class="feat-title">觀察日誌<em>Observations</em></td>
+          <td class="feat-desc">七類事件：澆水、施肥、換盆、修剪、問題、里程碑。可記高度、新葉/落葉、土壤含水、1–5 健康分數、心情。每筆最多 4 張照片。</td>
+          <td class="feat-tags"><span>SwiftData</span><span>Offline-first</span></td>
+        </tr>
+        <tr class="reveal reveal-d2">
+          <td class="feat-num">03</td>
+          <td class="feat-title">推播提醒<em>Reminders + push</em></td>
+          <td class="feat-desc">每日伺服器端排程。穩定送達到裝置；點擊通知深連結到對應植物。</td>
+          <td class="feat-tags"><span>FCM</span><span>APNs</span></td>
+        </tr>
+        <tr class="reveal reveal-d3">
+          <td class="feat-num">04</td>
+          <td class="feat-title">Today 聚合<em>Cross-plant view</em></td>
+          <td class="feat-desc">所有植物的逾期、今日、即將——三組聚合。首頁的今日提醒卡片只在有事時才 render。</td>
+          <td class="feat-tags"><span>Aggregation</span></td>
+        </tr>
+        <tr class="reveal">
+          <td class="feat-num">05</td>
+          <td class="feat-title">AI 層<em>Identify & diagnose</em></td>
+          <td class="feat-desc">一張照 → 物種候選 + 健康診斷 + 照護建議。AI 分頁上有使用量 chip；超過上限時付費牆會清楚顯示當期與月份額度。</td>
+          <td class="feat-tags"><span>Plant.id</span><span>Quota UX</span></td>
+        </tr>
+        <tr class="reveal reveal-d2">
+          <td class="feat-num">06</td>
+          <td class="feat-title">訂閱生命週期<em>StoreKit 2</em></td>
+          <td class="feat-desc">月訂與年訂。伺服器端驗證收據；訂閱狀態（作用中、寬限期、重試、過期）驅動橫幅與「修復付款」提示。</td>
+          <td class="feat-tags"><span>Server-side</span><span>Verified</span></td>
+        </tr>
+        <tr class="reveal reveal-d3">
+          <td class="feat-num">07</td>
+          <td class="feat-title">帳號<em>Account & export</em></td>
+          <td class="feat-desc">Sign in with Apple / Google（原生 SDK）。刪除帳號符合 Apple 帳號刪除要求，伺服器端級聯。隨時匯出完整 JSON 資料。</td>
+          <td class="feat-tags"><span>OAuth</span><span>GDPR</span></td>
+        </tr>
+        <tr class="reveal reveal-d4">
+          <td class="feat-num">08</td>
+          <td class="feat-title">其他<em>Streaks, calendar, guides</em></td>
+          <td class="feat-desc">照顧連續天數、里程碑慶祝動畫、月曆觀察網格、可搜尋的物種圖鑑與照護指南，以及給 is_admin 帳號的後台工作台。</td>
+          <td class="feat-tags"><span>Engagement</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- AI section -->
+<section class="section ai">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>04</span>
+      <span class="chapter">Oracle</span>
+      <span>The AI inside</span>
+      <span class="line"></span>
+      <span>One photo, real work</span>
+    </div>
+
+    <div class="ai-grid">
+      <div>
+        <h2 class="section-title reveal reveal-d2">
+          Your first photo<br />
+          <span class="italic">does the first job</span>.
+          <span class="han">讓第一張照片就做出第一件實事</span>
+        </h2>
+        <p class="section-lede reveal reveal-d3">
+          空白的「尚無植物」畫面，是大多數工具流失用戶的原因。
+          <em>PlantLog 讓拍下去的第一張照片就能換來物種辨識與健康診斷</em>——
+          第一個 session 就有回饋，你就不會離開。
+        </p>
+        <div class="reveal reveal-d4" style="display:flex; flex-direction:column; gap:18px; font-family: var(--han); font-size: 15px; line-height: 1.8;">
+          <div style="display:flex; gap:20px; align-items: baseline;">
+            <span style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--terracotta);">i</span>
+            <div><strong>Identify.</strong> 物種候選 + 信心分數，附上照護難度、澆水偏好、光照等級。</div>
+          </div>
+          <div style="display:flex; gap:20px; align-items: baseline;">
+            <span style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--terracotta);">ii</span>
+            <div><strong>Diagnose.</strong> 葉片黃化、積水、病蟲——照片 → 症狀清單 → 可執行的照護處方。</div>
+          </div>
+          <div style="display:flex; gap:20px; align-items: baseline;">
+            <span style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--terracotta);">iii</span>
+            <div><strong>額度 UX。</strong>使用量不是恐嚇；AI 分頁一直掛著使用量 chip，達到上限時付費牆把當期與月額度逐字講清楚。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-card reveal reveal-d2">
+        <div class="ai-card-head">
+          <span>Plant.id · Session 7f2a</span>
+          <span class="status">Ready</span>
+        </div>
+
+        <div style="font-family: var(--mono); font-size: 10px; color: var(--stone); letter-spacing: 0.12em; margin-bottom: 8px;">TOP MATCH</div>
+        <div class="ai-match">
+          Ficus lyrata
+          <span class="common">琴葉榕</span>
+        </div>
+
+        <div class="ai-confidence">
+          <span class="bar"></span>
+          <span class="pct">94%</span>
+        </div>
+
+        <div class="ai-alt">
+          <div class="ai-alt-label">Alternates</div>
+          <div class="ai-alt-list">
+            <div class="ai-alt-item"><span>Ficus elastica</span><span class="pct">4.2%</span></div>
+            <div class="ai-alt-item"><span>Ficus benjamina</span><span class="pct">1.1%</span></div>
+          </div>
+        </div>
+
+        <div class="ai-diagnose">
+          <div class="ai-diagnose-label">Diagnosis · 01</div>
+          <div class="ai-diagnose-title">下位葉片黃化，疑似澆水過多</div>
+          <div class="ai-diagnose-rx">
+            建議：將澆水節律從 5 日延後至 8–10 日。確認盆底排水；
+            土壤濕度計低於 30% 再澆。若一週內未改善 → 重新拍照再診斷。
+          </div>
+        </div>
+
+        <div class="ai-quota">
+          <span>本月已用 7/30 次</span>
+          <span class="chip">Pro · 無限</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section pricing" id="get">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>05</span>
+      <span class="chapter">Tender</span>
+      <span>Pricing</span>
+      <span class="line"></span>
+      <span>Free to start · Pro unlocks AI</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Free forever,<br />
+      <span class="italic">Pro when ready</span>.
+      <span class="han">永久免費，需要時再升級</span>
+    </h2>
+
+    <div class="pricing-grid">
+      <div class="tier reveal reveal-d3">
+        <div class="tier-stamp">Starter</div>
+        <div class="tier-name">免費版</div>
+        <div class="tier-price">
+          <span class="cur">$</span>0
+          <span class="per">/ 永久</span>
+        </div>
+        <div class="tier-sub">把你手邊的三五棵植物照顧好，綽綽有餘。</div>
+        <ul class="tier-list">
+          <li>無限植物與觀察紀錄<em>Unlimited</em></li>
+          <li>推播提醒與 Today 畫面<em>Core</em></li>
+          <li>每月 5 次 AI 辨識 / 診斷<em>5 / mo</em></li>
+          <li>資料匯出（JSON）<em>Export</em></li>
+          <li>SwiftData 離線優先<em>Offline</em></li>
+        </ul>
+        <a href="#" class="tier-cta">從 App Store 下載</a>
+      </div>
+
+      <div class="tier featured reveal reveal-d4">
+        <div class="tier-stamp">Pro</div>
+        <div class="tier-price">
+          <span class="cur">NT$</span>880
+          <span class="per">/ 年</span>
+        </div>
+        <div class="tier-sub">或 NT$99 / 月。StoreKit 2 管理，隨時取消。</div>
+        <ul class="tier-list">
+          <li>免費版全部功能<em>All Starter</em></li>
+          <li>無限 AI 辨識與診斷<em>Unlimited AI</em></li>
+          <li>優先 AI 推論佇列<em>Priority</em></li>
+          <li>進階照護指南與物種圖鑑<em>Pro guides</em></li>
+          <li>年度植物回顧（即將推出）<em>Coming</em></li>
+          <li>支持一個兩人的獨立團隊<em>Indie</em></li>
+        </ul>
+        <a href="#" class="tier-cta">升級 Pro ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <div class="container">
+    <h3 class="colophon-hero reveal">
+      One photo, <span class="italic">a lifetime</span><br />
+      of <span class="italic">green days</span>.
+      <span class="han">一張照片，換來一生綠意</span>
+    </h3>
+
+    <div class="colophon-grid">
+      <div class="colophon-col">
+        <div style="display: flex; gap: 18px; align-items: flex-start; margin-bottom: 20px;">
+          <img src="/assets/app-icon.png" alt="PlantLog" style="width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 4px 14px -4px rgba(0,0,0,0.6), 0 0 0 1px rgba(245,239,224,0.08);" />
+          <div>
+            <div style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--paper); line-height: 1.1;">PlantLog</div>
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--stone); margin-top: 4px; text-transform: uppercase;">by Kairos.ai</div>
+          </div>
+        </div>
+      </div>
+      <div class="colophon-col">
+        <h4>App</h4>
+        <ul>
+          <li><a href="#">App Store</a></li>
+          <li><a href="#">更新日誌</a></li>
+          <li><a href="#">TestFlight</a></li>
+          <li><a href="#">支援 / FAQ</a></li>
+        </ul>
+      </div>
+      <div class="colophon-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">隱私政策 · Privacy</a></li>
+          <li><a href="/terms">服務條款 · Terms (EULA)</a></li>
+          <li><a href="/privacy#rights">刪除帳號</a></li>
+          <li><a href="/privacy#rights">資料匯出</a></li>
+        </ul>
+      </div>
+      <div class="colophon-col">
+        <h4>聯絡</h4>
+        <ul>
+          <li><a href="mailto:kairos.ai.tech@gmail.com">kairos.ai.tech@gmail.com</a></li>
+          <li><a href="https://www.kairosaitech.com/" target="_blank" rel="noopener">kairosaitech.com ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="colophon-foot">
+      <div class="sig">© 2026 Kairos.ai · <em>Made with patience.</em></div>
+      <div>PlantLog · Vol. 01 · No. 001</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  reveals.forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

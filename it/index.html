@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PlantLog — Un diario botanico ancora in crescita</title>
+<meta name="description" content="Trasforma il proprietario occasionale di piante in un custode costante. Fotografa, identifica la specie automaticamente, registra irrigazione e crescita, ricevi promemoria push." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/home.css" />
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-row">
+    <a href="/it/" class="masthead-mark" style="text-decoration:none; color:inherit;">
+      <img src="/assets/app-icon.png" alt="PlantLog" class="icon" />
+      PlantLog
+    </a>
+    <select class="lang-switch" aria-label="Lingua" onchange="if(this.value){window.location.href=this.value;}">
+      <option value="/">中文 · ZH</option>
+      <option value="/en/">English · EN</option>
+      <option value="/fr/">Français · FR</option>
+      <option value="/es/">Español · ES</option>
+      <option value="/ja/">日本語 · JA</option>
+      <option value="/it/" selected>Italiano · IT</option>
+      <option value="/de/">Deutsch · DE</option>
+    </select>
+    <a href="#get" class="masthead-cta">Scarica ↗</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-issue reveal">
+      <span>№ 001 &nbsp;·&nbsp; Un compagno per il giardiniere occasionale</span>
+      <span class="divider"></span>
+    </div>
+
+    <div class="hero-grid">
+      <h1 class="hero-title reveal">
+        Coltiva con più
+        <span class="italic">costanza</span>,
+        <br />non con più
+        <span class="italic">fatica</span><span class="amp">.</span>
+        <span class="han">Trasforma il proprietario occasionale di piante in un custode costante.</span>
+      </h1>
+
+      <aside class="hero-side reveal reveal-d2">
+        <div class="icon-pedestal">
+          <img src="/assets/app-icon.png" alt="PlantLog" class="icon-big" />
+          <div class="caption">
+            <span>PlantLog · iOS</span>
+            <span class="star">✦</span>
+            <span>App Store</span>
+          </div>
+        </div>
+        <p class="hero-kicker">
+          La maggior parte delle app per piante sono enciclopedie morte o cloni di tamagotchi.
+          <em>PlantLog</em> sta nel mezzo: tratta ogni pianta come un diario in corso con dati di cura reali —
+          ritmo di irrigazione, umidità del terreno, punteggi di salute — più un livello di IA
+          che fa sì che la prima foto faccia un lavoro reale, così nessuno se ne va davanti a uno schermo vuoto.
+        </p>
+        <div class="hero-actions">
+          <a href="#get" class="btn btn-primary">
+            Scarica su App Store
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 11 L11 3 M11 3 H5 M11 3 V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#loop" class="btn btn-ghost">Leggi il numero</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-strip">
+      <div class="strip-item reveal">
+        <span class="label">Specie</span>
+        <span class="value">10 000<span class="han"> spp.</span></span>
+      </div>
+      <div class="strip-item reveal reveal-d2">
+        <span class="label">Latenza</span>
+        <span class="value"><em style="font-style:italic;">~</em>2,1<span class="han">s per ID</span></span>
+      </div>
+      <div class="strip-item reveal reveal-d3">
+        <span class="label">Promemoria</span>
+        <span class="value">FCM<span class="han">push programmato</span></span>
+      </div>
+      <div class="strip-item reveal reveal-d4">
+        <span class="label">Offline</span>
+        <span class="value">SwiftData<span class="han">local-first</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="loop">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>01</span>
+      <span class="chapter">Rituale</span>
+      <span>Il ciclo principale</span>
+      <span class="line"></span>
+      <span>Quattro mosse, per sempre</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Un ciclo che <span class="italic">fa rima</span>,<br />
+      non una lista che <span class="italic">assilla</span>.
+      <span class="han">Non promemoria — un ritmo che ritorna.</span>
+    </h2>
+
+    <p class="section-lede reveal reveal-d3">
+      Ripeti quattro mosse. <em>Fotografa, annota, ricevi la notifica, controlla Oggi.</em>
+      Ognuna è abbastanza breve per vivere nella tua giornata — non per essere archiviata sotto «dopo».
+    </p>
+
+    <div class="loop-grid">
+      <article class="loop-step reveal">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <rect x="3" y="6" width="18" height="14" rx="2"/>
+          <circle cx="12" cy="13" r="4"/>
+          <path d="M8 6 L10 3 H14 L16 6"/>
+        </svg>
+        <div class="step-num">I<sup>01</sup></div>
+        <h3>Aggiungi una pianta<em>Fotografa e identifica</em></h3>
+        <p>Scatta una foto. L'IA restituisce candidati di specie da Plant.id con difficoltà di cura, luce e preferenza di irrigazione. L'anteprima appare istantaneamente; i fallimenti di caricamento ora vengono segnalati chiaramente.</p>
+      </article>
+
+      <article class="loop-step reveal reveal-d2">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M5 21 L5 7 Q5 5 7 5 L17 5 Q19 5 19 7 L19 21 Z"/>
+          <path d="M8 10 H16 M8 14 H16 M8 18 H13"/>
+        </svg>
+        <div class="step-num">II<sup>02</sup></div>
+        <h3>Registra osservazioni<em>Diario strutturato</em></h3>
+        <p>Irrigazione, fertilizzazione, rinvaso, potatura, problemi, milestone — sette tipi di eventi strutturati. Misura foglie, registra umidità, dai un punteggio 1–5, fino a 4 foto per voce.</p>
+      </article>
+
+      <article class="loop-step reveal reveal-d3">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M6 9 Q6 4 12 4 Q18 4 18 9 V14 L20 17 H4 L6 14 Z"/>
+          <path d="M10 20 Q12 22 14 20"/>
+        </svg>
+        <div class="step-num">III<sup>03</sup></div>
+        <h3>Ricevi promemoria<em>Push programmato</em></h3>
+        <p>Notifiche push programmate lato server, consegna affidabile. Toccando si apre direttamente la pianta; l'azione «Fatto» è nella notifica — senza aprire l'app.</p>
+      </article>
+
+      <article class="loop-step reveal reveal-d4">
+        <svg class="loop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <rect x="4" y="5" width="16" height="16" rx="2"/>
+          <path d="M4 9 H20 M8 3 V7 M16 3 V7"/>
+          <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+        </svg>
+        <div class="step-num">IV<sup>04</sup></div>
+        <h3>Schermata Oggi<em>Vista multi-pianta</em></h3>
+        <p>In ritardo, oggi e prossimi di tutte le piante — tre gruppi aggregati. La scheda in homepage appare solo quando c'è lavoro reale.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>02</span>
+      <span class="chapter">Interfaccia</span>
+      <span>Pensata per un colpo d'occhio</span>
+      <span class="line"></span>
+      <span>UI nativa in cinese tradizionale</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Tre schermate,<br />
+      <span class="italic">un ritmo</span>.
+      <span class="han">Tre schermate a colpo d'occhio che compongono un ritmo intero.</span>
+    </h2>
+
+    <p class="section-lede reveal reveal-d3">
+      Ogni schermata è progettata per «dare un'occhiata e andarsene».
+      <em>Non resti nell'app — innaffi nella vita reale, l'app si limita a ricordare.</em>
+    </p>
+
+    <div class="phone-stage">
+      <div class="phone-col reveal">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>9:41</span>
+              <span>●●● ▲ ▤</span>
+            </div>
+            <div class="screen-today">
+              <div class="date">Martedì · 21 / 04</div>
+              <div class="heading">今日照顧<em>Oggi</em></div>
+
+              <div class="today-group">
+                <div class="today-group-label overdue">
+                  <span>In ritardo</span>
+                  <span class="han">逾期 · 2</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot overdue"></span>
+                  <span class="name">琴葉榕 Felix<small>Irrigare · 3 g fa</small></span>
+                  <span class="check">○</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot overdue"></span>
+                  <span class="name">龜背芋<small>Concimare · 1 g fa</small></span>
+                  <span class="check">○</span>
+                </div>
+              </div>
+
+              <div class="today-group">
+                <div class="today-group-label">
+                  <span>Oggi</span>
+                  <span class="han">今日 · 3</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot"></span>
+                  <span class="name">虎尾蘭<small>Irrigare</small></span>
+                  <span class="check">○</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot"></span>
+                  <span class="name">多肉 · Echeveria<small>Controllo salute</small></span>
+                  <span class="check">○</span>
+                </div>
+                <div class="today-row">
+                  <span class="dot"></span>
+                  <span class="name">蔓綠絨<small>Ruotare</small></span>
+                  <span class="check">○</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <span class="num">i.</span>
+          <span class="txt">Schermata Oggi: in ritardo, oggi, prossimi — multi-pianta.</span>
+        </div>
+      </div>
+
+      <div class="phone-col reveal reveal-d2">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>9:41</span>
+              <span>●●● ▲ ▤</span>
+            </div>
+            <div class="screen-plant">
+              <div class="plant-hero">
+                <span class="tag">Species · identified</span>
+                <span class="scientific">Ficus lyrata</span>
+              </div>
+              <div class="plant-meta">
+                <div class="name">琴葉榕 · Felix</div>
+                <div class="loc">Soggiorno · Finestra est</div>
+
+                <div class="plant-stats">
+                  <div class="plant-stat"><div class="n">47</div><div class="l">giorni serie</div></div>
+                  <div class="plant-stat"><div class="n">4,8</div><div class="l">salute</div></div>
+                  <div class="plant-stat"><div class="n">126<span style="font-size:12px">cm</span></div><div class="l">altezza</div></div>
+                </div>
+
+                <div class="plant-timeline">
+                  <div class="timeline-entry">
+                    <span class="date">18/04</span>
+                    <span class="evt">Irrigato 320 ml<em>Irrigazione</em></span>
+                  </div>
+                  <div class="timeline-entry">
+                    <span class="date">12/04</span>
+                    <span class="evt">Rinvaso → vaso 8"<em>Rinvaso</em></span>
+                  </div>
+                  <div class="timeline-entry">
+                    <span class="date">05/04</span>
+                    <span class="evt">Nuove foglie × 2<em>Milestone</em></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <span class="num">ii.</span>
+          <span class="txt">Dettaglio pianta: un diario strutturato di lungo corso.</span>
+        </div>
+      </div>
+
+      <div class="phone-col reveal reveal-d3">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status" style="color: rgba(245,239,224,0.9);">
+              <span>9:41</span>
+              <span>●●● ▲ ▤</span>
+            </div>
+            <div class="screen-notif">
+              <div class="lockscreen-time">9:41</div>
+              <div class="lockscreen-date">Martedì · 21 aprile</div>
+
+              <div class="notif-card">
+                <div class="notif-head">
+                  <div class="notif-app">
+                    <div class="notif-icon">P</div>
+                    <span>PlantLog</span>
+                  </div>
+                  <span class="notif-time">ora</span>
+                </div>
+                <div class="notif-title">琴葉榕 Felix 該澆水了</div>
+                <div class="notif-body">6 giorni dall'ultima irrigazione. Il terreno dovrebbe essere asciutto in profondità — circa 300 ml.</div>
+                <div class="notif-actions">
+                  <div class="notif-action">Rinvia 1 g</div>
+                  <div class="notif-action primary">Fatto ✓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <span class="num">iii.</span>
+          <span class="txt">La push porta «Fatto» — senza aprire l'app.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section features">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>03</span>
+      <span class="chapter">Indice</span>
+      <span>Dentro l'app</span>
+      <span class="line"></span>
+      <span>Indice annotato</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Ogni funzione,<br />
+      <span class="italic">catalogata</span>.
+      <span class="han">Come l'indice di una guida sul campo.</span>
+    </h2>
+
+    <p class="section-lede reveal reveal-d3">
+      Se ti piacciono le schede tecniche — ecco il catalogo completo.
+      Leggi per numero, o salta alla pagina che ti interessa.
+    </p>
+
+    <table class="features-table">
+      <tbody>
+        <tr class="reveal">
+          <td class="feat-num">01</td>
+          <td class="feat-title">Gestione piante<em>Crea, modifica, archivia</em></td>
+          <td class="feat-desc">Aggiungi, modifica, archivia — con specie, tag di luogo, data di acquisizione, note. Viste griglia e cronologica; i fallimenti di caricamento ora sono espliciti.</td>
+          <td class="feat-tags"><span>CRUD</span><span>Errori visibili</span></td>
+        </tr>
+        <tr class="reveal">
+          <td class="feat-num">02</td>
+          <td class="feat-title">Osservazioni<em>Diario strutturato</em></td>
+          <td class="feat-desc">Sette tipi di evento: irrigazione, fertilizzazione, rinvaso, potatura, problemi, milestone. Altezza, foglie nuove / cadute, umidità, punteggio 1–5, umore. Fino a 4 foto per voce.</td>
+          <td class="feat-tags"><span>SwiftData</span><span>Offline-first</span></td>
+        </tr>
+        <tr class="reveal reveal-d2">
+          <td class="feat-num">03</td>
+          <td class="feat-title">Promemoria + push<em>Lato server</em></td>
+          <td class="feat-desc">Programmati giornalmente lato server. Consegna affidabile; il tap apre la pianta corrispondente.</td>
+          <td class="feat-tags"><span>FCM</span><span>APNs</span></td>
+        </tr>
+        <tr class="reveal reveal-d3">
+          <td class="feat-num">04</td>
+          <td class="feat-title">Aggregazione Oggi<em>Vista multi-pianta</em></td>
+          <td class="feat-desc">In ritardo, oggi e prossimi di tutte le piante — tre gruppi aggregati. La scheda in home appare solo quando c'è lavoro.</td>
+          <td class="feat-tags"><span>Aggregazione</span></td>
+        </tr>
+        <tr class="reveal">
+          <td class="feat-num">05</td>
+          <td class="feat-title">Strato IA<em>Identifica e diagnostica</em></td>
+          <td class="feat-desc">Una foto → candidati + diagnosi + suggerimenti. Chip d'uso sulla scheda IA; al raggiungimento del limite il paywall mostra chiaramente le quote attuale e mensile.</td>
+          <td class="feat-tags"><span>Plant.id</span><span>UX quota</span></td>
+        </tr>
+        <tr class="reveal reveal-d2">
+          <td class="feat-num">06</td>
+          <td class="feat-title">Abbonamenti<em>StoreKit 2</em></td>
+          <td class="feat-desc">Piani mensile e annuale. Verifica lato server; lo stato (attivo, grace, re-billing, scaduto) guida banner e il CTA «correggi pagamento».</td>
+          <td class="feat-tags"><span>Server</span><span>Verified</span></td>
+        </tr>
+        <tr class="reveal reveal-d3">
+          <td class="feat-num">07</td>
+          <td class="feat-title">Account<em>Accesso ed esportazione</em></td>
+          <td class="feat-desc">Sign in with Apple / Google (SDK nativi). L'eliminazione account rispetta i requisiti Apple, con cascata lato server. Esportazione JSON completa in qualsiasi momento.</td>
+          <td class="feat-tags"><span>OAuth</span><span>GDPR</span></td>
+        </tr>
+        <tr class="reveal reveal-d4">
+          <td class="feat-num">08</td>
+          <td class="feat-title">Altro<em>Serie, calendario, guide</em></td>
+          <td class="feat-desc">Giorni consecutivi di cura, celebrazione milestone, calendario mensile, catalogo specie e guide ricercabili, più console admin per account is_admin.</td>
+          <td class="feat-tags"><span>Engagement</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section ai">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>04</span>
+      <span class="chapter">Oracolo</span>
+      <span>L'IA interna</span>
+      <span class="line"></span>
+      <span>Una foto, lavoro reale</span>
+    </div>
+
+    <div class="ai-grid">
+      <div>
+        <h2 class="section-title reveal reveal-d2">
+          La tua prima foto<br />
+          <span class="italic">fa il primo lavoro</span>.
+          <span class="han">Che la prima foto consegni il primo vero risultato.</span>
+        </h2>
+        <p class="section-lede reveal reveal-d3">
+          La schermata vuota «nessuna pianta ancora» è il motivo per cui la maggior parte degli strumenti perde utenti.
+          <em>PlantLog fa sì che la prima foto guadagni un vero ID di specie e una diagnosi di salute</em> —
+          feedback nella prima sessione, così non te ne vai.
+        </p>
+        <div class="reveal reveal-d4" style="display:flex; flex-direction:column; gap:18px; font-family: var(--han); font-size: 15px; line-height: 1.8;">
+          <div style="display:flex; gap:20px; align-items: baseline;">
+            <span style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--terracotta);">i</span>
+            <div><strong>Identificare.</strong> Candidati + punteggio di confidenza, con difficoltà di cura, preferenza di irrigazione, livello di luce.</div>
+          </div>
+          <div style="display:flex; gap:20px; align-items: baseline;">
+            <span style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--terracotta);">ii</span>
+            <div><strong>Diagnosticare.</strong> Ingiallimento, eccesso d'acqua, parassiti — foto → lista sintomi → prescrizione di cura attuabile.</div>
+          </div>
+          <div style="display:flex; gap:20px; align-items: baseline;">
+            <span style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--terracotta);">iii</span>
+            <div><strong>UX quota.</strong> L'utilizzo non è una minaccia; la scheda IA ha un chip d'uso, e al raggiungimento del limite il paywall mostra chiaramente le quote attuale e mensile.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-card reveal reveal-d2">
+        <div class="ai-card-head">
+          <span>Plant.id · Session 7f2a</span>
+          <span class="status">Pronto</span>
+        </div>
+
+        <div style="font-family: var(--mono); font-size: 10px; color: var(--stone); letter-spacing: 0.12em; margin-bottom: 8px;">MIGLIORE CORRISPONDENZA</div>
+        <div class="ai-match">
+          Ficus lyrata
+          <span class="common">Fico lira</span>
+        </div>
+
+        <div class="ai-confidence">
+          <span class="bar"></span>
+          <span class="pct">94 %</span>
+        </div>
+
+        <div class="ai-alt">
+          <div class="ai-alt-label">Alternative</div>
+          <div class="ai-alt-list">
+            <div class="ai-alt-item"><span>Ficus elastica</span><span class="pct">4,2 %</span></div>
+            <div class="ai-alt-item"><span>Ficus benjamina</span><span class="pct">1,1 %</span></div>
+          </div>
+        </div>
+
+        <div class="ai-diagnose">
+          <div class="ai-diagnose-label">Diagnosi · 01</div>
+          <div class="ai-diagnose-title">Ingiallimento foglie basse, probabile eccesso di irrigazione</div>
+          <div class="ai-diagnose-rx">
+            Suggerimento: estendere l'intervallo di irrigazione da 5 a 8–10 giorni. Verificare il drenaggio;
+            innaffiare solo quando l'igrometro è sotto il 30 %. Nessun miglioramento entro una settimana →
+            rifare la foto e ri-diagnosticare.
+          </div>
+        </div>
+
+        <div class="ai-quota">
+          <span>7 / 30 usati questo mese</span>
+          <span class="chip">Pro · Illimitato</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing" id="get">
+  <div class="container">
+    <div class="section-number reveal">
+      <span>05</span>
+      <span class="chapter">Tariffa</span>
+      <span>Prezzi</span>
+      <span class="line"></span>
+      <span>Gratis per iniziare · Pro sblocca l'IA</span>
+    </div>
+
+    <h2 class="section-title reveal reveal-d2">
+      Gratis per sempre,<br />
+      <span class="italic">Pro al momento giusto</span>.
+      <span class="han">Gratis per sempre; passa al Pro quando serve.</span>
+    </h2>
+
+    <div class="pricing-grid">
+      <div class="tier reveal reveal-d3">
+        <div class="tier-stamp">Starter</div>
+        <div class="tier-name">Piano gratuito</div>
+        <div class="tier-price">
+          <span class="cur">$</span>0
+          <span class="per">/ per sempre</span>
+        </div>
+        <div class="tier-sub">Abbastanza per curare le tre-cinque piante sul davanzale.</div>
+        <ul class="tier-list">
+          <li>Piante e osservazioni illimitate<em>Illimitato</em></li>
+          <li>Promemoria push e schermata Oggi<em>Core</em></li>
+          <li>5 identificazioni / diagnosi IA al mese<em>5 / mese</em></li>
+          <li>Esportazione dati (JSON)<em>Esporta</em></li>
+          <li>SwiftData offline-first<em>Offline</em></li>
+        </ul>
+        <a href="#" class="tier-cta">Scarica su App Store</a>
+      </div>
+
+      <div class="tier featured reveal reveal-d4">
+        <div class="tier-stamp">Pro</div>
+        <div class="tier-price">
+          <span class="cur">NT$</span>880
+          <span class="per">/ anno</span>
+        </div>
+        <div class="tier-sub">O NT$99 / mese. Gestito da StoreKit 2, cancellabile in qualsiasi momento.</div>
+        <ul class="tier-list">
+          <li>Tutto di Starter<em>All Starter</em></li>
+          <li>Identificazione e diagnosi IA illimitate<em>IA illimitata</em></li>
+          <li>Coda di inferenza IA prioritaria<em>Priorità</em></li>
+          <li>Guide avanzate e atlante delle specie<em>Guide Pro</em></li>
+          <li>Retrospettiva annuale (in arrivo)<em>In arrivo</em></li>
+          <li>Sostiene un team indie di due<em>Indie</em></li>
+        </ul>
+        <a href="#" class="tier-cta">Passa a Pro ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="colophon">
+  <div class="container">
+    <h3 class="colophon-hero reveal">
+      Una foto, <span class="italic">una vita</span><br />
+      di <span class="italic">giorni verdi</span>.
+      <span class="han">Una foto, una vita di verde.</span>
+    </h3>
+
+    <div class="colophon-grid">
+      <div class="colophon-col">
+        <div style="display: flex; gap: 18px; align-items: flex-start; margin-bottom: 20px;">
+          <img src="/assets/app-icon.png" alt="PlantLog" style="width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 4px 14px -4px rgba(0,0,0,0.6), 0 0 0 1px rgba(245,239,224,0.08);" />
+          <div>
+            <div style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--paper); line-height: 1.1;">PlantLog</div>
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--stone); margin-top: 4px; text-transform: uppercase;">by Kairos.ai</div>
+          </div>
+        </div>
+      </div>
+      <div class="colophon-col">
+        <h4>App</h4>
+        <ul>
+          <li><a href="#">App Store</a></li>
+          <li><a href="#">Cronologia versioni</a></li>
+          <li><a href="#">TestFlight</a></li>
+          <li><a href="#">Supporto / FAQ</a></li>
+        </ul>
+      </div>
+      <div class="colophon-col">
+        <h4>Legale</h4>
+        <ul>
+          <li><a href="/it/privacy/">Informativa sulla privacy</a></li>
+          <li><a href="/it/terms/">Condizioni d'uso (EULA)</a></li>
+          <li><a href="/it/privacy/#rights">Elimina account</a></li>
+          <li><a href="/it/privacy/#rights">Esporta dati</a></li>
+        </ul>
+      </div>
+      <div class="colophon-col">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="mailto:kairos.ai.tech@gmail.com">kairos.ai.tech@gmail.com</a></li>
+          <li><a href="https://www.kairosaitech.com/" target="_blank" rel="noopener">kairosaitech.com ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="colophon-foot">
+      <div class="sig">© 2026 Kairos.ai · <em>Fatto con pazienza.</em></div>
+      <div>PlantLog · Vol. 01 · No. 001</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  reveals.forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>
